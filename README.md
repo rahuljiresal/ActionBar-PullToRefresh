@@ -10,8 +10,26 @@ The original version of ActionBar-PullToRefresh is made for Gradle (and Android 
 
 The original project allows customizing of the PullToRefresh view via an XML file (See the [Customisation](https://github.com/chrisbanes/ActionBar-PullToRefresh/wiki/Customisation) page for more information.). However, many times, you would want to change a really small attribute such as color of the progress bar, or color of the text. In that case, the XML file becomes an overkill (and too much work for lazy people like me!).
 
-So I added a few more methods to the Options class
-
+So I added a few more methods to the `Options` class. Here's how you can use it.
+```java
+    ActionBarPullToRefresh.from(getActivity())
+    		.insertLayoutInto(viewGroup) // We need to insert the PullToRefreshLayout into the Fragment's ViewGroup
+    		.theseChildrenArePullable(scrollView) // We need to mark the ListView and it's Empty View as pullable This is because they are not direct children of the
+    		// ViewGroup
+    		.options(Options.create()
+    				.refreshingText("Fetching A lot of Stuff...")
+    				.pullText("Pull me down!")
+    				.releaseText("Let go of me!!!")
+    				.titleTextColor(android.R.color.black)
+    				.progressBarColor(android.R.color.holo_orange_light)
+    				.headerBackgroundColor(android.R.color.holo_blue_light)
+    				.progressBarStyle(Options.PROGRESS_BAR_STYLE_INSIDE) // or Options.PROGRESS_BAR_STYLE_OUTSIDE
+    				.build())
+    		.listener(new OnRefreshListener() { // We can now complete the setup as desired
+    			  // pulled to refresh
+    				})
+    		.setup(mPullToRefreshLayout);
+```
 
 ---
 
@@ -55,7 +73,7 @@ Then we are some advanced integration information:
 * [ListFragment](https://github.com/chrisbanes/ActionBar-PullToRefresh/wiki/ListFragment) when integrating the library with a ListFragment.
 
 
-## Customisation 
+## Customisation (From Original Project)
 See the [Customisation](https://github.com/chrisbanes/ActionBar-PullToRefresh/wiki/Customisation) page for more information.
 
 =======================
