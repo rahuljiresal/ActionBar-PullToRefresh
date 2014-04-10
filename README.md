@@ -1,6 +1,6 @@
 # ActionBar-PullToRefresh
 
-This ActionBar-PullToRefresh is based on Chris Banes' [ActionBar-PullToRefresh](https://github.com/chrisbanes/ActionBar-PullToRefresh).
+This ActionBar-PullToRefresh is based on [ActionBar-PullToRefresh](https://github.com/chrisbanes/ActionBar-PullToRefresh) by Chris Banes([website](http://chris.banes.me), [github](https://github.com/chrisbanes), [twitter](https://twitter.com/chrisbanes), [linkedin](http://www.linkedin.com/in/chrisbanes)).
 
 The original version of ActionBar-PullToRefresh is made for Gradle (and Android Studio). However, importing that project into Eclipse (Android Development Tools) is a pain-in-the-a**! This project can be imported directly into Eclipse and used right away.
 
